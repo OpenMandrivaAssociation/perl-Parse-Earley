@@ -1,15 +1,13 @@
 %define upstream_name    Parse-Earley
-%define upstream_version 0.15
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	0.15
+Release:	5
 
 Summary:	Parse::Earley - Parse any Context-Free Grammar
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Parse/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Parse/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -20,7 +18,7 @@ Parse::Earley accepts or rejects a string based on any Context-Free grammar,
 specified by a simplified yacc-like specification.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -38,9 +36,7 @@ make test
 %changelog
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.150.0-1mdv2010.0
 + Revision: 404285
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.15-5mdv2009.0
+- rebuild using %0.15 Thu Jul 31 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.15-5mdv2009.0
 + Revision: 258190
 - rebuild
 
